@@ -1,11 +1,11 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
 from config.database import engine, get_db
-from app.models import user
+from app.models import user,property
 
 # 데이터베이스 테이블 생성
 user.Base.metadata.create_all(bind=engine)
-# property.Base.metadata.create_all(bind=engine)
+property.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
