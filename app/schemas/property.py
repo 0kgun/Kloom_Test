@@ -1,7 +1,7 @@
 from typing import Optional
 from datetime import date
 from pydantic import BaseModel, confloat, conint
-from models.property import PropertyStatus
+from app.models.property import PropertyStatus
 
 class PropertyBase(BaseModel):
     """Base property schema."""

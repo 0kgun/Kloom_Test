@@ -28,6 +28,8 @@ class User(Base):
     agent_profile = relationship("AgentProfile", back_populates="user", uselist=False)
     owner_profile = relationship("OwnerProfile", back_populates="user", uselist=False)
 
+    properties = relationship("Property", back_populates="agent")
+
     def __repr__(self):
         return f"<User {self.email}>"
 

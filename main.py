@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from app.api.router.property_router import app as property_router
+from app.api.router.property_router import router as property_router
+from app.api.router.user_router import router as user_router
 from config.database import engine, Base
 
 # Create database tables
@@ -12,7 +13,8 @@ app = FastAPI(
 )
 
 # Include routers
-app.include_router(property.router)
+app.include_router(property_router)
+app.include_router(user_router)
 
 @app.get("/")
 def read_root():

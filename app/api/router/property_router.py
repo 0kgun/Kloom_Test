@@ -12,6 +12,7 @@ from app.schemas.property import (
 # from app.core.auth import get_current_user
 from app.schemas.user import User
 
+
 router = APIRouter(
     prefix="/properties",
     tags=["properties"]
@@ -21,10 +22,11 @@ router = APIRouter(
 async def create_property(
     property_data: PropertyCreate,
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    # current_user: User = Depends(get_current_user)
 ):
     """Create a new property listing."""
-    property = await PropertyService.create_property(db, property_data, current_user.id)
+    """임시 user_id 1로 설정"""
+    property = await PropertyService.create_property(db, property_data, 1)
     return PropertyResponse(
         data=property,
         message="Property created successfully"

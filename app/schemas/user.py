@@ -1,7 +1,7 @@
 from typing import Optional
 from datetime import datetime
 from pydantic import BaseModel, EmailStr
-from models.user import UserRole
+from app.models.user import UserRole
 
 class FranchiseProfileBase(BaseModel):
     """Base franchise profile schema."""
@@ -45,9 +45,9 @@ class UserBase(BaseModel):
 class UserCreate(UserBase):
     """User creation schema."""
     password: str
-    franchise_profile: Optional[FranchiseProfileBase] = None
-    agent_profile: Optional[AgentProfileBase] = None
-    owner_profile: Optional[OwnerProfileBase] = None
+    # franchise_profile: Optional[FranchiseProfileBase] = None
+    # agent_profile: Optional[AgentProfileBase] = None
+    # owner_profile: Optional[OwnerProfileBase] = None
 
 class UserUpdate(BaseModel):
     """User update schema."""

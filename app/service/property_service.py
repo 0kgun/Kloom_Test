@@ -46,10 +46,10 @@ class PropertyService:
         
         return properties, total
 
-    @staticmethod
-    async def check_property_owner(db: Session, property_id: int, agent_id: int) -> bool:
-        """Check if the agent is the owner of the property."""
-        property = await PropertyService.get_property(db, property_id)
-        if property.agent_id != agent_id:
-            raise UnauthorizedException(detail="Not authorized to modify this property")
-        return True 
+    # @staticmethod
+    # async def check_property_owner(db: Session, property_id: int, agent_id: int) -> bool:
+    #     """Check if the agent is the owner of the property."""
+    #     property = await PropertyService.get_property(db, property_id)
+    #     if property.agent_id != agent_id:
+    #         raise UnauthorizedException(detail="Not authorized to modify this property")
+    #     return True 
